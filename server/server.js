@@ -18,7 +18,8 @@ app.delete('/api/deletePet/:id', ct.deletePet);
 app.get('/api/cats', ct.getCats);
 app.get('/api/dogs', ct.getDogs);
 app.get('/api/others', ct.getOthers);
-app.get('/api/search', ct.searchPets);
+app.get('/api/search/name', ct.searchPetsByName);
+app.get('/api/search/id', ct.searchPetsById);
 
 const port = 4545
 app.listen(port, () => console.log(`${port} peas in the pod`))

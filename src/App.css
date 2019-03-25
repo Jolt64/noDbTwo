@@ -98,7 +98,7 @@ table {
   flex-wrap: nowrap;
   justify-content: center;
   align-items: stretch;
-  margin: 1vh;
+  margin: 2vh;
   border-radius: 10px;
 }
 
@@ -186,6 +186,12 @@ section{
 
 .petsList > * {
   margin: 5px;
+}
+
+.petsId{
+  position: relative;
+  left: 45%;
+  font-weight: 600;
 }
 
 .editPetsList{

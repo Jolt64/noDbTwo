@@ -20,6 +20,7 @@ class PetCards extends Component {
     const { name, img, type, food, notes, id } = this.props.pet;
     return this.state.edit ? (
       <div className="petsList">
+        <div className="petsId">Id: {id}</div>
         <h2>{name}</h2>
         <img src={img} alt="Pet" width="100" />
         <h3>{type}</h3>

@@ -140,8 +140,20 @@ class Landing extends Component {
       });
   };
 
-  searchHandler = search => {
-    Axios.get(`/api/search?name=${search}`)
+  searchByNameHandler = search => {
+    Axios.get(`/api/search/name?name=${search}`)
+      .then(res => {
+        this.setState({
+          pets: res.data
+        });
+      })
+      .catch(err => {
+        console.log("Something is broken", err);
+      });
+  };
+
+  searchByIdHandler = search => {
+    Axios.get(`/api/search/id?id=${search}`)
       .then(res => {
         this.setState({
           pets: res.data
@@ -153,11 +165,11 @@ class Landing extends Component {
   };
 
   render() {
-      let weatherDisplay = ''
-    if(this.state.temp <= 45) {
-        weatherDisplay = 'It is too Cold for most pets outside'
-    } else if(this.state.temp <= 75) {
-        weatherDisplay = 'It is a great day to play outside with your pet'
+    let weatherDisplay = "";
+    if (this.state.temp <= 45) {
+      weatherDisplay = "It is too Cold for most pets outside";
+    } else if (this.state.temp <= 75) {
+      weatherDisplay = "It is a great day to play outside with your pet";
     }
     return (
       <div className="App">
@@ -171,7 +183,10 @@ class Landing extends Component {
           </div>
           <div className="petsListHeader">
             <div className="petsListHeaderDiv">
-              <p>It is {this.state.temp} degrees and we are seeing some {this.state.description}</p>
+              <p>
+                It is {this.state.temp} degrees and we are seeing some{" "}
+                {this.state.description}
+              </p>
             </div>
             <div className="petsListHeaderButtons">
               <h1>Here are some of our friends</h1>
@@ -183,13 +198,19 @@ class Landing extends Component {
               </div>
               <div className="typeButtonsWrapper">
                 <p>Search</p>
-                <input onChange={e => this.searchHandler(e.target.value)} />
+                <input
+                  placeholder="Search by name"
+                  onChange={e => this.searchByNameHandler(e.target.value)}
+                />
+                <input
+                type="number"
+                  placeholder="Search by id"
+                  onChange={e => this.searchByIdHandler(e.target.value)}
+                />
               </div>
             </div>
             <div className="petsListHeaderDiv">
-                <p>
-                {weatherDisplay}
-                </p>
+              <p>{weatherDisplay}</p>
             </div>
           </div>
           <div className="petsArray">

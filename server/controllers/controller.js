@@ -177,9 +177,18 @@ module.exports = {
     res.send(allOthers)
   },
 
-  searchPets: (req, res) => {
+  searchPetsByName: (req, res) => {
     const { name } = req.query
     let petsName = pets.filter(pet => pet.name.toLowerCase().includes(name.toLowerCase()))
     res.send(petsName)
+  },
+
+  searchPetsById: (req, res) => {
+    const { id } = req.query
+    let petsId = []
+    if(id) {
+      petsId = pets.filter(pet => pet.id == id)
+    } else { petsId = pets}
+    res.send(petsId)
   }
 };
