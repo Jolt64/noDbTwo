@@ -1,33 +1,290 @@
-.App {
-  text-align: center;
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+/* html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+} */
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
+.appWrapper {
+  width: 100vw;
+  background-image: url("https://images.pexels.com/photos/289613/pexels-photo-289613.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
   align-items: center;
+  align-content: space-around;
+}
+
+.App {
+  background-color: rgb(70, 172, 194, 0.9);
+  width: 80vw;
+  text-align: center;
+  margin: 0, auto;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.headerWrapper {
+  background-color: #fcf7ff;
+  width: 75vw;
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: stretch;
+  margin: 1vh;
+  border-radius: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.headerWrapper h1 {
+  margin: 1vh;
+}
+
+.headerWrapper h3 {
+  margin: 1vh;
+}
+
+.headerWrapper p {
+  margin: 1vh;
+}
+
+section{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: space-around;
+}
+
+.petOfTheDayDiv {
+  width: 200px;
+  height: 300px;
+  border: solid black 1px;
+  padding: 1vh 7vh 1vh 7vh;
+  background: #d1ccdc;
+  margin: 2vh;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: space-around;
+  border-radius: 10px;
+}
+
+.petOfTheDayDiv > * {
+  margin: 5px;
+}
+
+.newPetInputs {
+  width: 200px;
+  height: 300px;
+  border: solid black 1px;
+  padding: 1vh 7vh 1vh 7vh;
+  background: #d1ccdc;
+  margin: 2vh;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: space-around;
+  border-radius: 10px;
+}
+
+.newPetInputs > * {
+  margin: 5px;
+}
+
+.textArea1 {
+  width: 250px;
+  height: 50px;
+}
+
+.petsList {
+  width: 200px;
+  height: 275px;
+  border: solid black 1px;
+  padding: 0.1vh 2vh 0.1vh 2vh;
+  background: #d1ccdc;
+  margin: 2vh;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: space-around;
+  border-radius: 10px;
+}
+
+.petsList > * {
+  margin: 5px;
+}
+
+.editPetsList{
+  border: solid black 1px;
+  padding: 0.1vh 2vh 0.1vh 2vh;
+  background: #d1ccdc;
+  margin: 2vh;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: space-around;
+}
+
+.notesBox {
+  border: solid black 1px;
+  background: white;
+  scroll-behavior: auto;
+  overflow-wrap: break-word;
+  overflow-y: scroll;
+  width: 200px;
+  height: 60px;
+}
+
+.AddPOTDWeather {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: space-around;
+}
+
+.petsListHeader {
+  background-color: #fcf7ff;
+  width: 75vw;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  align-content: space-around;
+  margin: 10px;
+  border-radius: 10px;
+}
+
+.petsListHeaderDiv{
+  /* border: solid black 1px; */
+  width: 30%;
+  height: 50%;
+  font-weight: 700;
+}
+
+.petsListHeaderButtons{
+  background-color: #fcf7ff;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: space-around;
+  margin: 10px;
+}
+
+.typeButtonsWrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: space-around;
+  margin: 5px;
+}
+
+.typeButtonsWrapper input {
+  height: 20px;
+}
+
+.typeButtonsWrapper > * {
+  margin: 5px
+}
+
+.petsArray {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: space-around;
+  margin: 10px;
+}
+
+.newPetInputs {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: space-around;
+}
+
+.petCardButtons > * {
+  margin: 1vh;
 }
